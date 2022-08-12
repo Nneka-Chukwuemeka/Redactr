@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Cormorant+Garamond:wght@300;400&family=Montserrat&family=Roboto&display=swap');
+
+:root {
+  --main-background: rgb(255, 255, 255);
+  --input-background: rgb(215, 238, 243);
+  --main-text-background: #f3f2f3;
+  --text-area-background: rgb(240, 238, 255);
+  --button-background: rgb(131, 33, 255);
+  --button-text-color: white;
+  --text-color: rgb(16, 16, 16);
+  --mobile-font-size-headding: 1.5rem;
+  --mobile-font-size-sub-heading: 1.2rem;
+  --mobile-font-size-body-text: 1rem;
+  --desktop-font-size-heading: 1.6rem;
+  --desktop-font-size-sub-heading: 1.3rem;
+  --desktop-font-size-body-text: 1.2rem;
+  --center-margin: 0 auto;
+  --main-padding: 1rem;
+  --line-height: 1.6rem;
+  --font-family: 'Cormorant Garamond', serif, 'Montserrat', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: cover;
+}
+label,
+textarea,
+input {
+  display: block;
+}
+.material-symbols-rounded {
+  color: var(--button-background);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+a {
+  text-decoration: none;
+}
+.body-container {
+  background: var(--main-background);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--font-family);
+  max-width: 100%;
+}
+
+/* The Header styling */
+header {
+  padding: 0.5rem var(--main-padding);
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  border-bottom: solid 0.2px var(--text-area-background);
+}
+header h1 a {
+  color: var(--text-color);
+  font-size: var(--mobile-font-size-headding);
+}
+header nav {
+  display: none;
+}
+header .nav-mobile {
+  position: fixed;
+  display: block;
+  width: 0%;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  z-index: 1;
+  transition: 2s;
+  background: var(--button-background);
+  height: 100%;
+}
+.nav-mobile a {
+  padding: var(--main-padding);
+  transition: 0.5s;
+  text-align: center;
+  display: block;
+  color: var(--button-text-color);
+  font-size: var(--mobile-font-size-body-text);
+}
+.menu-toggle span {
+  cursor: pointer;
+}
+.nav-mobile #close {
+  position: absolute;
+  right: 3.5rem;
+  top: 1.5rem;
+}
+#close .close-btn {
+  color: var(--button-text-color);
+  font-size: 2rem;
+}
+#mobile-container {
+  position: relative;
+  top: 3.5rem;
+}
+#mobile-container a {
+  margin: 1rem 0;
+}
+#mobile-container a:hover,
+#close .close-btn:hover {
+  color: var(--input-background);
+  transition: 0.3s linear;
+  font-size: var(--mobile-font-size-sub-heading);
+}
+
+/* main container styling */
+main {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  background: var(--main-text-background);
+}
+main .top-section {
+  font-size: var(--mobile-font-size-sub-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--button-background);
+  padding: var(--main-padding);
+}
+.top-section p {
+  text-align: center;
+}
+main .form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem var(--main-padding);
+}
+
+.form-container form {
+  border: 2px solid #cbc3e3;
+  border-radius: 10px;
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.28);
+  padding: var(--main-padding);
+  margin: var(--center-margin);
+  align-content: center;
+  width: 98%;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.input-content > *,
+.redact-content > * {
+  padding: 0.5rem 0;
+}
+.input-content label {
+  font-size: var(--mobile-font-size-sub-heading);
+  font-weight: 700;
+  width: 90%;
+  display: block;
+  margin: 0.5rem;
+}
+.input-content span {
+  font-style: italic;
+  font-size: 0.8rem;
+  width: 90%;
+  display: block;
+  margin: auto 0.5rem;
+}
+.type-text textarea {
+  margin: var(--center-margin);
+  width: 95%;
+  height: 15rem;
+  border: 1px solid gray;
+  resize: none;
+  padding: 0.4rem;
+  font-size: var(--mobile-font-size-body-text);
+  font-weight: 500;
+}
+.redact-content textarea {
+  margin: var(--center-margin);
+  width: 95%;
+  height: 7rem;
+  border: 1px solid gray;
+  resize: none;
+  padding: 0.4rem;
+  font-size: var(--mobile-font-size-body-text);
+  font-weight: 500;
+}
+textarea:focus,
+.redact-replace input:focus {
+  outline: 2px solid var(--button-background);
+  border-radius: 4px;
+}
+.redact-replace input {
+  margin: var(--center-margin);
+  width: 95%;
+  height: 2rem;
+  border: 1px solid gray;
+  resize: none;
+  padding: 0.6rem;
+}
+::placeholder {
+  font-size: var(--mobile-font-size-body-text);
+  font-weight: 200;
+  color: var(--text-color);
+}
+.btn {
+  padding: 0.8rem var(--main-padding);
+  align-self: center;
+  background-color: var(--button-background);
+  border-radius: 10px;
+  color: var(--button-text-color);
+  text-transform: capitalize;
+  width: 50%;
+  margin: 0.8rem auto;
+  font-size: var(--mobile-font-size-sub-heading);
+  font-weight: 200;
+  outline: none;
+  transition-duration: 0.4s;
+}
+.btn:hover {
+  color: var(--button-background);
+  border: 1px solid var(--button-background);
+  background: var(--main-background);
+  cursor: pointer;
+}
