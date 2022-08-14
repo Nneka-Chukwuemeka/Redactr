@@ -140,7 +140,8 @@ main .form-container {
   padding: 0.5rem var(--main-padding);
 }
 
-.form-container form {
+.form-container form,
+.form-container .second-form {
   border: 2px solid #cbc3e3;
   border-radius: 10px;
   box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.28);
@@ -154,10 +155,12 @@ main .form-container {
   align-content: center;
 }
 .input-content > *,
+.output-content > *,
 .redact-content > * {
   padding: 0.5rem 0;
 }
-.input-content label {
+.input-content label,
+.output-content p {
   font-size: var(--mobile-font-size-sub-heading);
   font-weight: 700;
   width: 90%;
@@ -228,4 +231,10 @@ textarea:focus,
   border: 1px solid var(--button-background);
   background: var(--main-background);
   cursor: pointer;
+}
+.form-input {
+  display: none;
+}
+.form-container .second-form {
+  margin-top: 1.5rem;
 }
