@@ -17,6 +17,7 @@ let words = document.getElementById('input-textarea');
 let redactText = document.getElementById('input-redact');
 let btn = document.getElementById('redact-now');
 let output = document.getElementById('result');
+let replace = document.getElementById('replace');
 
 btn.addEventListener('click', redactFunction);
 
@@ -32,5 +33,16 @@ function callRedact(redacts) {
 }
 function changeString(word, redact) {
   const exp = RegExp(redact, 'ig');
-  return word.replaceAll(exp, '******');
+  return word.replaceAll(
+    exp,
+    `${replace.value}${replace.value}${replace.value}${replace.value}`
+  );
+}
+replace.addEventListener('copy', check);
+
+function check(e) {
+  e.preventDefault();
+  console.log(
+    `${replace.value}${replace.value}${replace.value}${replace.value}`
+  );
 }
