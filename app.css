@@ -174,7 +174,8 @@ main .form-container {
   display: block;
   margin: auto 0.5rem;
 }
-.type-text textarea {
+.type-text textarea,
+.output-content textarea {
   margin: var(--center-margin);
   width: 95%;
   height: 15rem;
@@ -225,6 +226,7 @@ textarea:focus,
   font-weight: 200;
   outline: none;
   transition-duration: 0.4s;
+  text-align: center;
 }
 .btn:hover {
   color: var(--button-background);
@@ -237,4 +239,8 @@ textarea:focus,
 }
 .form-container .second-form {
   margin-top: 1.5rem;
+}
+.word {
+  display: flex;
+  justify-content: center;
 }

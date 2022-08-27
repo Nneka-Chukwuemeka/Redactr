@@ -1,23 +1,3 @@
-// function redactr(words, test) {
-//   test = test.split(' ');
-//   words = words.split(' ');
-//   store = [];
-
-//   let re = new RegExp(/[a-zA-Z]+/g);
-//   for (let value of words) {
-//     for (let testValue of test) {
-//       if (value === testValue) {
-//         console.log(value.toString().replace(re, 'xxx'));
-//       } /* else {
-//         store.push(value);
-//       } */
-//     }
-//   }
-//   //   console.log(store.join(' '));
-// }
-
-// redactr('Nneka is a girl', 'girl is');
-
 let menuBar = document.getElementById('toggle-nav');
 let closeNav = document.getElementById('close-nav');
 let showMobile = document.getElementById('mobile');
@@ -31,3 +11,26 @@ function closeMobileNav() {
 }
 menuBar.addEventListener('click', openMobileNav);
 closeNav.addEventListener('click', closeMobileNav);
+
+// redacting the text
+let words = document.getElementById('input-textarea');
+let redactText = document.getElementById('input-redact');
+let btn = document.getElementById('redact-now');
+let output = document.getElementById('result');
+
+btn.addEventListener('click', redactFunction);
+
+function redactFunction(e) {
+  e.preventDefault();
+  callRedact(redactText.value.split(' '));
+}
+function callRedact(redacts) {
+  for (value of redacts) {
+    if (!value) continue;
+    output.value = changeString(words.value, value);
+  }
+}
+function changeString(word, redact) {
+  const exp = RegExp(redact, 'ig');
+  return word.replaceAll(exp, '******');
+}
